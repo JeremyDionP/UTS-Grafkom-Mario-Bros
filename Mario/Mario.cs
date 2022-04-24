@@ -32,26 +32,13 @@ namespace Mario
         List<Asset3d> environment2 = new List<Asset3d>();
 
         float temp = 0;
-        float _time = 0.0f;
         float jump = 0f;
         bool up = true;
         float hitung = 0;
-        float lompat = 0;
-
 
 
         public void load(int x, int y)
         {
-
-            float titik1 = ((0.5f - x) / 2) / (x / 2);
-            float titik2 = ((0.7f - x) / 2) / (x / 2);
-            float titik3 = ((0.9f - x) / 2) / (x / 2);
-
-            float titik4 = ((0.3f - y) / 2) / (x / y);
-            float titik5 = ((0.4f - y) / 2) / (x / y);
-            float titik6 = ((0.5f - y) / 2) / (x / y);
-
-
 
             //INITIALISASI
             //Kepala
@@ -115,7 +102,6 @@ namespace Mario
             var sepatuKiri = new Asset3d(new Vector3(0f, 0f, 0f));
             var rightLeg = new Asset3d(new Vector3(0f, 0, 1.0f));
             var sepatuKanan = new Asset3d(new Vector3(0f, 0f, 0f));
-            //titik1, titik4, titik2, titik5, titik3, titik6
             var coinCube = new Asset3d(new Vector3(1.0f, 0.7f, 0));
             var coin = new Asset3d(new Vector3(1.0f, 1.0f, 0));
 
@@ -145,10 +131,6 @@ namespace Mario
                 new uint[]
                 {
                 });
-
-
-
-
 
 
             //=================================================================================================
@@ -445,14 +427,6 @@ namespace Mario
                 objectList[3].render(3, _camera.GetViewMatrix(), _camera.GetProjectionMatrix());
             }
             objectList[2].render(2, _camera.GetViewMatrix(), _camera.GetProjectionMatrix());
-
-
-
-            //List<float> _verticesTemp = objectList[0].createCurveBezier();
-            //objectList[1].setVertices(_verticesTemp.ToArray());
-            //objectList[1].load(Constants.path + "shader.vert", Constants.path + "shader.frag", x, y);
-            //objectList[1].render(3, _camera.GetViewMatrix(), _camera.GetProjectionMatrix());
-            //objectList[0].render(2, _camera.GetViewMatrix(), _camera.GetProjectionMatrix());
 
             foreach (List<Asset3d> i in objectListMario)
             {
