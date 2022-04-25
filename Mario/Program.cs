@@ -1,14 +1,15 @@
 ﻿using OpenTK.Windowing.Desktop;
 using OpenTK.Mathematics;
 
-namespace Mario{ 
+namespace Mario
+{
 	class Program
 	{
 		static void Main(string[] args)
 		{
 			var ourWindow = new NativeWindowSettings()
 			{
-				Size = new Vector2i(600, 600),
+				Size = new Vector2i(900, 900),
 				Title = "Proyek Grafkom"
 			};
 

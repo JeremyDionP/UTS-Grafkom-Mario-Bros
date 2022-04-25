@@ -35,7 +35,7 @@ namespace Mario
         int indexs;
         int[] _pascal;
 
-
+        // constructor
         public Asset3d(Vector3 color)
         {
             this.color = color;
@@ -85,7 +85,7 @@ namespace Mario
             _shader.SetVector3("objColor", color);
 
             //Matrix4 model = Matrix4.Identity;
-            ////model = model * Matrix4.CreateRotationY((float)MathHelper.DegreesToRadians(time));
+            //model = model * Matrix4.CreateRotationY((float)MathHelper.DegreesToRadians(time));
             //model = model * Matrix4.CreateTranslation(0f, -0.5f, 0.0f);
 
             //model = model * Matrix4.CreateScale(1.5f);
@@ -93,8 +93,6 @@ namespace Mario
             _shader.SetMatrix4("model", model);
             _shader.SetMatrix4("view", camera_view);
             _shader.SetMatrix4("projection", camera_projection);
-
-
 
             if (indices.Count != 0)
             {
@@ -112,7 +110,7 @@ namespace Mario
         }
 
         /// <summary>
-        /// Berfungsi untuk me-reset sudut euler (sudut relatif terhadap objek)
+        /// Berfungsi untuk me-reset sudut euler(sudut relatif terhadap objek)
         /// </summary>
         public void resetEuler()
         {
@@ -124,55 +122,56 @@ namespace Mario
 
         #region solidObjects
 
+        // fungsi untuk membentuk objek kubus
         public void createCuboid(float x_, float y_, float z_, float length)
         {
             var tempVertices = new List<Vector3>();
             objectCenter = new Vector3(x_, y_, z_);
             Vector3 temp_vector;
 
-            //Titik 1
+            // Titik 1
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ + length / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 2
+            // Titik 2
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ + length / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 3
+            // Titik 3
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ - length / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 4
+            // Titik 4
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ - length / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 5
+            // Titik 5
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ + length / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 6
+            // Titik 6
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ + length / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 7
+            // Titik 7
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ - length / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 8
+            // Titik 8
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ - length / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
@@ -180,27 +179,27 @@ namespace Mario
 
             var tempIndices = new List<uint>
             {
-				//Back
+				// Back
 				1, 2, 0,
                 2, 1, 3,
 				
-				//Top
+				// Top
 				5, 0, 4,
                 0, 5, 1,
 
-				//Right
+				// Right
 				5, 3, 1,
                 3, 5, 7,
 
-				//Left
+				// Left
 				0, 6, 4,
                 6, 0, 2,
 
-				//Front
+				// Front
 				4, 7, 5,
                 7, 4, 6,
 
-				//Bottom
+				// Bottom
 				3, 6, 2,
                 6, 3, 7
             };
@@ -208,55 +207,56 @@ namespace Mario
             indices = tempIndices;
         }
 
+        // fungsi untuk membentuk objek balok
         public void createBlock(float x_, float y_, float z_, float length, float height)
         {
             var tempVertices = new List<Vector3>();
             objectCenter = new Vector3(x_, y_, z_);
             Vector3 temp_vector;
 
-            //Titik 1
+            // Titik 1
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ + height / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 2
+            // Titik 2
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ + height / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 3
+            // Titik 3
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ - height / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 4
+            // Titik 4
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ - height / 2.0f;
             temp_vector.Z = z_ - length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 5
+            // Titik 5
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ + height / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 6
+            // Titik 6
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ + height / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 7
+            // Titik 7
             temp_vector.X = x_ - length / 2.0f;
             temp_vector.Y = y_ - height / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
             tempVertices.Add(temp_vector);
 
-            //Titik 8
+            // Titik 8
             temp_vector.X = x_ + length / 2.0f;
             temp_vector.Y = y_ - height / 2.0f;
             temp_vector.Z = z_ + length / 2.0f;
@@ -264,27 +264,27 @@ namespace Mario
 
             var tempIndices = new List<uint>
             {
-				//Back
+				// Back
 				1, 2, 0,
                 2, 1, 3,
 				
-				//Top
+				// Top
 				5, 0, 4,
                 0, 5, 1,
 
-				//Right
+				// Right
 				5, 3, 1,
                 3, 5, 7,
 
-				//Left
+				// Left
 				0, 6, 4,
                 6, 0, 2,
 
-				//Front
+				// Front
 				4, 7, 5,
                 7, 4, 6,
 
-				//Bottom
+				// Bottom
 				3, 6, 2,
                 6, 3, 7
             };
@@ -292,6 +292,87 @@ namespace Mario
             indices = tempIndices;
         }
 
+        // fungsi untuk membentuk objek balok
+        public void createBlock2(float x_, float y_, float z_, float length, float height, float depth)
+        {
+            var tempVertices = new List<Vector3>();
+            objectCenter = new Vector3(x_, y_, z_);
+            Vector3 temp_vector;
+
+            // Titik 1
+            temp_vector.X = x_ - length / 2.0f;
+            temp_vector.Y = y_ + height / 2.0f;
+            temp_vector.Z = z_ - depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            // Titik 2
+            temp_vector.X = x_ + length / 2.0f;
+            temp_vector.Y = y_ + height / 2.0f;
+            temp_vector.Z = z_ - depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            // Titik 3
+            temp_vector.X = x_ - length / 2.0f;
+            temp_vector.Y = y_ - height / 2.0f;
+            temp_vector.Z = z_ - depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            // Titik 4
+            temp_vector.X = x_ + length / 2.0f;
+            temp_vector.Y = y_ - height / 2.0f;
+            temp_vector.Z = z_ - depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            // Titik 5
+            temp_vector.X = x_ - length / 2.0f;
+            temp_vector.Y = y_ + height / 2.0f;
+            temp_vector.Z = z_ + depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            // Titik 6
+            temp_vector.X = x_ + length / 2.0f;
+            temp_vector.Y = y_ + height / 2.0f;
+            temp_vector.Z = z_ + depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            // Titik 7
+            temp_vector.X = x_ - length / 2.0f;
+            temp_vector.Y = y_ - height / 2.0f;
+            temp_vector.Z = z_ + depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            // Titik 8
+            temp_vector.X = x_ + length / 2.0f;
+            temp_vector.Y = y_ - height / 2.0f;
+            temp_vector.Z = z_ + depth / 2.0f;
+            tempVertices.Add(temp_vector);
+
+            var tempIndices = new List<uint>
+            {
+                // Back
+                1, 2, 0,
+                2, 1, 3,
+                // Top
+                5, 0, 4,
+                0, 5, 1,
+                // Right
+                5, 3, 1,
+                3, 5, 7,
+                // Left
+                0, 6, 4,
+                6, 0, 2,
+                // Front
+                4, 7, 5,
+                7, 4, 6,
+                // Bottom
+                3, 6, 2,
+                6, 3, 7
+            };
+            vertices = tempVertices;
+            indices = tempIndices;
+        }
+
+        // fungsi untuk membentuk objek hiperboloid satu sisi
         public void createHyperboloid1(float x, float y, float z, float radX, float radY, float radZ, float sectorCount, float stackCount)
         {
             objectCenter = new Vector3(x, y, z);
@@ -347,84 +428,7 @@ namespace Mario
             }
         }
 
-        public void createBlock2(float x_, float y_, float z_, float length, float height, float depth)
-        {
-            var tempVertices = new List<Vector3>();
-            objectCenter = new Vector3(x_, y_, z_);
-            Vector3 temp_vector;
-
-            //Titik 1
-            temp_vector.X = x_ - length / 2.0f;
-            temp_vector.Y = y_ + height / 2.0f;
-            temp_vector.Z = z_ - depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            //Titik 2
-            temp_vector.X = x_ + length / 2.0f;
-            temp_vector.Y = y_ + height / 2.0f;
-            temp_vector.Z = z_ - depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            //Titik 3
-            temp_vector.X = x_ - length / 2.0f;
-            temp_vector.Y = y_ - height / 2.0f;
-            temp_vector.Z = z_ - depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            //Titik 4
-            temp_vector.X = x_ + length / 2.0f;
-            temp_vector.Y = y_ - height / 2.0f;
-            temp_vector.Z = z_ - depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            //Titik 5
-            temp_vector.X = x_ - length / 2.0f;
-            temp_vector.Y = y_ + height / 2.0f;
-            temp_vector.Z = z_ + depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            //Titik 6
-            temp_vector.X = x_ + length / 2.0f;
-            temp_vector.Y = y_ + height / 2.0f;
-            temp_vector.Z = z_ + depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            //Titik 7
-            temp_vector.X = x_ - length / 2.0f;
-            temp_vector.Y = y_ - height / 2.0f;
-            temp_vector.Z = z_ + depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            //Titik 8
-            temp_vector.X = x_ + length / 2.0f;
-            temp_vector.Y = y_ - height / 2.0f;
-            temp_vector.Z = z_ + depth / 2.0f;
-            tempVertices.Add(temp_vector);
-
-            var tempIndices = new List<uint>
-            {
-                //Back
-                1, 2, 0,
-                2, 1, 3,
-                //Top
-                5, 0, 4,
-                0, 5, 1,
-                //Right
-                5, 3, 1,
-                3, 5, 7,
-                //Left
-                0, 6, 4,
-                6, 0, 2,
-                //Front
-                4, 7, 5,
-                7, 4, 6,
-                //Bottom
-                3, 6, 2,
-                6, 3, 7
-            };
-            vertices = tempVertices;
-            indices = tempIndices;
-        }
+        // fungsi untuk membentuk objek elips atau lingkaran
         public void createEllipsoid(float x, float y, float z, float radX, float radY, float radZ, float sectorCount, float stackCount)
         {
             objectCenter = new Vector3(x, y, z);
@@ -480,7 +484,7 @@ namespace Mario
             }
         }
 
-
+        // fungsi untuk membentuk objek kerucut
         public void createCone(float x, float y, float z, float radX, float radY, float radZ, float sectorCount, float stackCount)
         {
             objectCenter = new Vector3(x, y, z);
@@ -536,6 +540,7 @@ namespace Mario
             }
         }
 
+        // fungsi untuk membentuk objek elliptic paraboloid atau setengah bola
         public void createEllipticParaboloid(float x, float y, float z, float radX, float radY, float radZ, float sectorCount, float stackCount)
         {
             objectCenter = new Vector3(x, y, z);
@@ -550,7 +555,7 @@ namespace Mario
             {
                 stackAngle = pi / 2 - i * stackStep;
                 tempX = radX * (float)(stackAngle);
-                tempY = radY * (float)(stackAngle) ;
+                tempY = radY * (float)(stackAngle);
                 tempZ = radZ * (stackAngle) * stackAngle;
 
                 for (int j = 0; j <= sectorCount; ++j)
@@ -559,7 +564,7 @@ namespace Mario
 
                     temp_vector.X = x + tempX * (float)Math.Cos(sectorAngle);
                     temp_vector.Y = y + tempY * (float)Math.Sin(sectorAngle);
-                    temp_vector.Z = z + tempZ ;
+                    temp_vector.Z = z + tempZ;
 
                     vertices.Add(temp_vector);
                 }
@@ -591,7 +596,7 @@ namespace Mario
             }
         }
 
-       
+        // fungsi untuk membentuk objek silinder atau tabung
         public void createCylinder(float x, float y, float z, float radX, float radY, float radZ, float sectorCount, float stackCount)
         {
             objectCenter = new Vector3(x, y, z);
@@ -618,7 +623,6 @@ namespace Mario
                 }
             }
 
-
             uint k1, k2;
             for (int i = 0; i < stackCount; ++i)
             {
@@ -645,6 +649,7 @@ namespace Mario
             }
         }
 
+        // fungsi untuk membentuk objek torus
         public void createTorus(float x, float y, float z, float radMajor, float radMinor, float sectorCount, float stackCount)
         {
             objectCenter = new Vector3(x, y, z);
@@ -694,64 +699,11 @@ namespace Mario
             }
         }
 
-        public List<int> getRow(int rowIndex)
-        {
-            List<int> currow = new List<int>();
-            //------
-            currow.Add(1);
-            if (rowIndex <= 100)
-            {
-                return currow;
-            }
-            //-----
-            List<int> prev = getRow(rowIndex - 1);
-            for (int i = 1; i < prev.Count; i++)
-            {
-                int curr = prev[i - 1] + prev[i];
-                currow.Add(curr);
-            }
-            currow.Add(1);
-            return currow;
-        }
-
-        public List<float> createCurveBezier()
-        {
-            List<float> _vertices_bezier = new List<float>();
-            List<int> pascal = getRow(indexs - 1);
-            _pascal = pascal.ToArray();
-            for (float t = 0; t <= 1.0f; t += 0.01f)
-            {
-                Vector3 p = getP(indexs, t);
-                _vertices_bezier.Add(p.X);
-                _vertices_bezier.Add(p.Y);
-                _vertices_bezier.Add(p.Z);
-            }
-            return _vertices_bezier;
-
-        }
-
-        public Vector3 getP(int n, float t)
-        {
-            Vector3 p = new Vector3(0, 0, 0);
-            float k;
-            for (int i = 0; i < n; i++)
-            {
-                k = (float)Math.Pow((1 - t), n - 1 - i) * (float)Math.Pow(t, i) * _pascal[i];
-                p.X += k * vertices[i * 3].X;
-                p.Y += k * vertices[i * 3].Y;
-                p.Z += k * vertices[i * 3].Z;
-            }
-            return p;
-        }
-
-        public void setVertices(List<Vector3> _temp)
-        {
-            vertices = _temp;
-        }
-
         #endregion
 
         #region transforms
+
+        // fungsi untuk merotasi objek
         public void rotate(Vector3 pivot, Vector3 vector, float angle)
         {
             var radAngle = MathHelper.DegreesToRadians(angle);
@@ -820,6 +772,7 @@ namespace Mario
             return temp;
         }
 
+        // fungsi untuk mentranslasi objek
         public void translate(float x, float y, float z)
         {
             model *= Matrix4.CreateTranslation(x, y, z);
@@ -833,6 +786,7 @@ namespace Mario
             }
         }
 
+        // fungsi untuk mengubah ukuran objek
         public void scale(float scaleX, float scaleY, float scaleZ)
         {
             model *= Matrix4.CreateTranslation(-objectCenter);
@@ -844,6 +798,7 @@ namespace Mario
                 i.scale(scaleX, scaleY, scaleZ);
             }
         }
+
         #endregion
     }
 }

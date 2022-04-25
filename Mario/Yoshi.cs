@@ -117,12 +117,12 @@ namespace Mario
             var right_knee = new Asset3d(new Vector3(0.3f, 0.85f, 0.4f));
 
             // Shoes
-            var left_shoes_1 = new Asset3d(new Vector3(0.7f, 0.55f, 0.25f));
-            var left_shoes_2 = new Asset3d(new Vector3(0.7f, 0.55f, 0.25f));
-            var left_shoes_ring = new Asset3d(new Vector3(0.7f, 0.55f, 0.25f));
-            var right_shoes_1 = new Asset3d(new Vector3(0.7f, 0.55f, 0.25f));
-            var right_shoes_2 = new Asset3d(new Vector3(0.7f, 0.55f, 0.25f));
-            var right_shoes_ring = new Asset3d(new Vector3(0.7f, 0.55f, 0.25f));
+            var left_shoes_1 = new Asset3d(new Vector3(1.0f, 0.55f, 0.0f));
+            var left_shoes_2 = new Asset3d(new Vector3(1.0f, 0.55f, 0.0f));
+            var left_shoes_ring = new Asset3d(new Vector3(1.0f, 0.55f, 0.0f));
+            var right_shoes_1 = new Asset3d(new Vector3(1.0f, 0.55f, 0.0f));
+            var right_shoes_2 = new Asset3d(new Vector3(1.0f, 0.55f, 0.0f));
+            var right_shoes_ring = new Asset3d(new Vector3(1.0f, 0.55f, 0.0f));
 
             // Arms + Hands
             var left_shoulder = new Asset3d(new Vector3(0.3f, 0.85f, 0.4f));
@@ -268,7 +268,6 @@ namespace Mario
             right_arm_2.rotate(right_arm_2.objectCenter, Vector3.UnitZ, 45);
             right_hand.createEllipsoid(-0.1425f, 0.0935f, -0.475f, 0.0085f, 0.0085f, 0.0085f, 100, 100);
 
-
             // ===== ADD OBJECT =====
             // Yoshi
             // Head
@@ -370,7 +369,6 @@ namespace Mario
             objectListYoshi.Add(right_leg);
             objectListYoshi.Add(swing);
 
-            // menambahkan shaders ke setiap objek yang ada
             // Load tree
             foreach (Asset3d i in tree)
             {
@@ -410,12 +408,12 @@ namespace Mario
         public void render(FrameEventArgs args, Camera _camera, KeyboardState input)
         {
             float time = (float)args.Time; //Deltatime ==> waktu antara frame sebelumnya ke frame berikutnya, gunakan untuk animasi
-            //Console.WriteLine(time);
+
             // Render Yoshi dan Swing dengan animasi
             foreach (List<Asset3d> i in objectListYoshi)
             {
                 // animasi mengayun ke belakang menggunakan rotate
-                if (counter < 660 && move_backward)
+                if (counter < 490 && move_backward)
                 {
                     counter += 1;
                     foreach (Asset3d j in i)
@@ -433,7 +431,7 @@ namespace Mario
                 else
                 {
                     move_backward = false;
-                    if (counter > -660 && !move_backward)
+                    if (counter > -490 && !move_backward)
                     {
                         counter -= 1;
 
