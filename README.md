@@ -6,7 +6,7 @@
 <br>
 <a href="https://drive.google.com/file/d/123DVR-UBveTgimzRFogtHAIyNQsaAVIS/view?usp=sharing">Laporan</a>
 <br>
-<a href="https://drive.google.com/file/d/1Soqzvcy1SAL_5_jk6EbPZbThrC9wSq-O/view?usp=sharing">Video Demo</a>
+<a href="https://drive.google.com/file/d/1EdPKhY-Wj0u62mqR6GQySRw8VCTYswQM/view?usp=sharing">Video Demo</a>
 <br>
 <br>
 <br>
