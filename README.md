@@ -3,7 +3,7 @@ Proyek Ujian Tengah Semester (UTS) mata kuliah Grafika Komputer (Grafkom) semest
 
 ## "Mario Bros" by : 
 - Wendy Santoso - C14200036
-- Justin Rampengan - C14200148
+- Justin A. H. Rampengan - C14200148
 - Jeremy Dion P. - C14200206
 
 **[File Laporan](https://drive.google.com/file/d/123DVR-UBveTgimzRFogtHAIyNQsaAVIS/view?usp=sharing)**
