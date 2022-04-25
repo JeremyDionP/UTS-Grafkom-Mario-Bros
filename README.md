@@ -1,5 +1,5 @@
 # UTS-Grafkom-Mario-Bros
-Proyek Ujian Tengah Semester (UTS) mata kuliah Grafika Komputer (Grafkom)
+Proyek Ujian Tengah Semester (UTS) mata kuliah Grafika Komputer (Grafkom) semester genap 2021/2022.
 
 ## "Mario Bros" by : 
 - Wendy Santoso - C14200036
