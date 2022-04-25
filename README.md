@@ -7,6 +7,7 @@ Proyek Ujian Tengah Semester (UTS) mata kuliah Grafika Komputer (Grafkom)
 - Jeremy Dion P. - C14200206
 
 **[File Laporan](https://drive.google.com/file/d/123DVR-UBveTgimzRFogtHAIyNQsaAVIS/view?usp=sharing)**
+<br>
 **[Video Demonstrasi](https://drive.google.com/file/d/1EdPKhY-Wj0u62mqR6GQySRw8VCTYswQM/view?usp=sharing)**
 
 ## Preview : 
